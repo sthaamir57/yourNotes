@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 1rem;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  color: #9b70ff;
+}
+
+.logo a span {
+  font-weight: bold;
+  color: #782fd0;
+}
+
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-elements ul li {
+  position: relative;
+  margin: 0 0.7rem;
+  padding: 0.7rem;
+}
+
+.nav-elements ul li a {
+  height: 100%;
+  padding-bottom: 2rem;
+  color: #734ad3;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  transition: color 0.5s ease;
+}
+
+.nav-elements ul li a:hover,
+.nav-elements ul li:hover a {
+  color: #9b70ff;
+}
+
+.nav-elements > ul > li:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.5px;
+  width: 100%;
+  background-color: #9b70ff;
+  animation-name: navHover;
+  animation-delay: 300ms;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes navHover {
+  100% {
+    height: 1.5px;
+    background-color: #9b70ff;
+  }
+}
+
+.nav-elements > ul > li > ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-weight: 300;
+  font-size: 0.85rem;
+  background-color: #fff;
+  width: 170px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  box-shadow: 0 3px 6px #0000000e, 0 3px 6px #00000013;
+}
+
+.nav-elements ul li:hover ul,
+.nav-elements ul li ul:hover {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-elements > ul > li > .dropdown > li {
+  border-bottom: thin solid #f4f4f4;
+}
+
+.nav-elements > ul > li > .dropdown > li > a {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  transition: color 10ms linear, transform 135ms linear;
+}
+
+.nav-elements > ul > li > .dropdown > li > a:hover {
+  color: #13425c;
+  transform: translateX(2%) translateZ(0);
+}
+
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main img {
+  width: 550px;
+}
+
+.landing-text {
+  width: 40%;
+  margin-top: -10rem;
+}
+
+.landing-text h1 {
+  font-size: 4rem;
+}
+
+.landing-text h2 {
+  font-size: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.btn-land {
+  background-color: #45258f;
+  margin-top: 2rem;
+  color: #fff;
+  transition: background 0.5s ease-in-out;
+}
+
+.btn-land:hover {
+  background-color: #5f4798;
+}
