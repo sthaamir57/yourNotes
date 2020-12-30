@@ -15,35 +15,70 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- JS -->
     <script defer src="js/app.js"></script>
+    <script defer src="js/subjects.js"></script>
+    <script defer src="js/search.js"></script>
 </head>
 
 <body>
     <nav>
-        <div class="logo"><a href="index.html">Your<span>Notes</span></a></div>
-        <div class="nav-elements">
-            <ul>
-                <li><a href="#" class="hover2drop">All Courses</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Grade 11</a></li>
-                        <li><a href="#">Grade 12</a></li>
-                        <li><a href="#">Bachelor</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">Connect</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
+        <div class="top-bar">
+            <div class="logo"><a href="index.html">Your<span>Notes</span></a></div>
+            <div class="hamburger-icon">
+                <span class="line line-1 transform-line-1"></span>
+                <span class="line line-2 transform-line-2"></span>
+            </div>
         </div>
+        <ul class="main-nav">
+            <li class="nav-el"><a href="#" class="hover2drop">All Courses</a>
+                <ul class="dropdown">
+                    <li class="drop-el"><a href="#">Grade 11</a></li>
+                    <li class="drop-el"><a href="#b">Grade 12</a></li>
+                    <li class="drop-el"><a href="#n">Bachelor</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-el"><a href="#">Connect</a></li>
+            <li class="nav-el"><a href="#">About</a></li>
+        </ul>
     </nav>
 
     <main>
-        <img src="./img/bg.svg" alt="hello">
-        <div class="landing-text">
-            <h1>Exam pressure building up???</h1>
-            <h2>Need notes?</h2>
-            <a href="#" class="btn btn-land">
-                Yes, I do
-            </a>
+        <section class="hero container">
+            <img src="./img/bg.svg" alt="hello">
+            <div class="landing-text">
+                <h1>Exam pressure building up???</h1>
+                <h2>Need notes?</h2>
+                <a href="#" class="btn btn-land">
+                    Get notes now!
+                </a>
+            </div>
+        </section>
+
+        <!-- <div class="cards">
+            <div class="card">
+                <h1>Grade 11</h1>
+            </div>
+            <div class="card">
+                <h1>Grade 12</h1>
+            </div>
+            <div class="card">
+                <h1>Bachelor</h1>
+            </div>
+        </div> -->
+
+
+        <div class="search-contents container">
+            <h1>Find Your Notes</h1>
+            <div class="searchWrapper">
+                <select name="grade" id="grades">
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                    <option value="Bachelor">Bachelor</option>
+                </select>
+                <input type="text" name="searchBar" id="searchBar" placeholder="Subject...">
+            </div>
+
+            <div class="charList"></div>
         </div>
     </main>
 
