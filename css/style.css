@@ -67,7 +67,7 @@ nav {
 
 .line {
   position: absolute;
-  height: 0.18em;
+  height: 0.2em;
   width: 65%;
   background-color: var(--clr-primary);
   transition: all 0.7s cubic-bezier(1, 0, 0, 1);
@@ -122,6 +122,14 @@ nav {
   font-size: 1rem;
   padding: 2em 6.7em;
   margin: 1em;
+}
+
+.main-nav li a i {
+  margin-left: 0.3em;
+}
+
+.transformZ-90 {
+  transform: rotateZ(180deg);
 }
 
 .hover2drop {
@@ -289,27 +297,38 @@ nav {
     color: var(--clr-purple-100);
   }
 
-  .main-nav > li:hover::after {
+  .main-nav li a i {
+    margin-left: 0.5em;
+    transition: transform 0.5s ease;
+  }
+
+  .main-nav li a:hover i {
+    transform: rotateZ(360deg);
+  }
+
+  .main-nav > li::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 0.5px;
+    height: 1.5px;
+    transform: scaleX(0);
     width: 100%;
+    transform-origin: left bottom;
     background-color: var(--clr-purple-100);
-    animation-name: navHover;
-    animation-delay: 300ms;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+    transition: transform 0.5s ease;
   }
 
+  .main-nav > li:hover::after {
+    transform: scaleX(1);
+  }
+  /* 
   @keyframes navHover {
     100% {
-      height: 1.5px;
+      transform: scaleX(1);
       background-color: var(--clr-purple-100);
     }
-  }
+  } */
 
   .dropdown {
     display: flex;
@@ -325,6 +344,7 @@ nav {
     opacity: 0;
     z-index: 5;
     box-shadow: 0 3px 6px #0000000e, 0 3px 6px #00000013;
+    transition: all 0.5s ease;
   }
 
   .main-nav li:hover ul,
@@ -341,7 +361,7 @@ nav {
   .main-nav > li > .dropdown > li > a {
     display: block;
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.5em;
     transition: color 10ms linear, transform 135ms linear;
     color: var(--clr-primary-contrast);
   }
