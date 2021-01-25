@@ -10,6 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -120,7 +121,7 @@ nav {
 .main-nav li a {
   color: #fff;
   font-size: 1rem;
-  padding: 2em 6.7em;
+  padding: 2em 5em;
   margin: 1em;
 }
 
@@ -134,6 +135,7 @@ nav {
 
 .hover2drop {
   pointer-events: pointer;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
 }
 
 .dropdown {
@@ -274,6 +276,7 @@ nav {
   }
 
   .hero img {
+    min-width: 500px;
     max-width: 550px;
   }
 
